@@ -1,0 +1,117 @@
+html{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: rgb(239, 255, 253);
+}
+*{
+    padding: 0;
+    margin: 0;
+}
+/* navigation bar setiings */
+nav{
+    padding: 10px 10px;
+    display: flex;
+    justify-content:space-between;
+    align-content: center;
+    background-color:rgb(184, 255, 249);
+}
+nav a,li{
+    margin:auto 0;
+    text-decoration: none;
+    list-style: none;
+    color: black;
+}
+#iconfont,.logo{
+    color: rgb(66, 194, 255);
+}
+#iconfont span{
+    color:black;
+}
+#navigator a{
+    padding: 0 10px;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+
+/* apppointment page settings */
+#appointment{
+    width: 40vw;
+    margin: 0 auto;
+    padding: 5vh 0 10vh 0;
+}
+#appointment input,textarea,select{
+    width: 40vw;
+    height: 5vh;
+}
+#description{
+    height: 15vh;
+    padding: 5px;
+    font-size: inherit;
+}
+button{
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 2px;
+}
+button:hover{
+    border:none;
+    padding: 2px;
+}
+button:not(:nth-last-child(3)){
+    float: right;
+    direction: rtl;
+    margin:4px;
+}
+#create{
+    background-color: rgb(184, 255, 249);
+}
+#create:hover{
+    background-color: rgb(66, 194, 255);
+    color: white;
+}
+#create_another:hover{
+    background-color:#C3DBD9;
+}
+#cancel:hover{
+    background-color: #C3DBD9;
+}
+/* home page */
+.home_head{
+    text-align: center;
+}
+.home_content{
+    width: 80vw;
+    margin: 5vh auto;
+}
+.page_refer{
+    margin: 15vh auto;
+    text-align: center;
+    line-height: 2rem;
+}
+
+/*about page*/
+#about_task,#about_ourteam{
+    text-align: center;
+}
+#about_ourteam{
+    width: 60vw;
+    margin: 0 auto;
+    padding: 5vh 0 0 0 ;
+}
+#about_ourteam p,#about_ourteam ul{
+    padding: 2vh 0;
+}
+#about_ourteam ul li{
+    margin: 1vh 0;
+}
+
+
+/*footer*/
+footer{
+    display: flex;
+    justify-content: center;
+}
+footer p{
+    margin: 5vh 0;
+}

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appointment</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <%- include("../parts/nav.ejs") %>
+
+        <form action="/appointment" method="post" id="appointment">
+            <h3>Contact info</h3>
+            <label for="name">Name<span style="color: red;">*</span></label>
+            <br>
+            <input type="text" id="name" name="name" required>
+            <br>
+            <label for="phone">Phone number<span style="color: red;">*</span></label>
+            <br>
+            <input type="tel" name="phone" id="phone" minlength="10" maxlength="12" required>
+            <br><br>
+            <label for="location">Service location<span style="color: red;">*</span></label>
+            <br>
+            <input type="text" name="location" id="location" required>
+            <br><br>
+
+            <h3>Service Info</h3>
+            <label for="subject">Subject</label>
+            <br>
+            <input type="text" name="subject" id="subject" placeholder="Service name">
+            <br><br>
+            <label for="description">Description</label>
+            <br>
+            <textarea name="description" id="description" placeholder="Write your service desciption"></textarea>
+            <br><br>
+
+            <h3>Appointment Info</h3>
+            <label for="service_group">Service group
+                <br>
+                <select name="service_group" id="service_group">
+                    <option value="Electronic">Electronics</option>
+                    <option value="Computer">Computer</option>
+                    <option value="Hardware">Hardware</option>
+                    <option value="Cable">Cable</option>
+                </select>
+                <br><br>
+                <label for="field_tech">Field technician</label>
+                <br>
+                <select name="field_tech" id="field_tech">
+                    <option value="installation">Installation</option>
+                    <option value="repair">Repair</option>
+                    <option value="troubleshooting">Troubleshooting</option>
+                </select>
+            </label>
+            <br><br>
+            <label for="app_start_time">Appointment end time</label>
+            <br>
+            <input type="datetime-local" name="app_start_time" id="app_start_time">
+            <br><br>
+            <label for="app_end_time">Appointment end time</label>
+            <br>
+            <input type="datetime-local" name="app_end_time" id="app_end_time">
+            <br><br>
+
+            <h3>Properties</h3>
+            <label for="status">Status</label>
+            <br>
+            <select name="status" id="status">
+                <option value="open">Open</option>
+                <option value="close">Close</option>
+            </select>
+            <br><br>
+            <label for="priority">Priority</label>
+            <br>
+            <select name="priority" id="priority">
+                <option value="low"><span></span>Low</option>
+                <option value="normal"><span></span>Normal</option>
+                <option value="high"><span></span>High</option>
+            </select>
+            <br><br>
+            <hr>
+            <br>
+            <button type="reset" id="create_another">Create another</button>
+            <button id="cancel" type="reset"><a href="/">Cancel</a></button>
+            <button type="submit" id="create">Create</button>
+        </form>
+
+        <%- include("../parts/footer") %>
+
+        <script>
+            // for checking the our timezone
+            document.getElementById('create').addEventListener('click', () => {
+                let start = new Date(document.getElementById("app_start_time").value).toLocaleString("en-IN", { timeZone: "Asia/Kolkata" });
+                document.getElementById("app_start_time").innerHTML = start;
+
+                let end = new Date(document.getElementById("app_end_time").value).toLocaleString("en-IN", { timeZone: "Asia/Kolkata" });
+                document.getElementById("app_end_time").innerHTML = end;
+
+                console.log(start);
+                console.log(end);
+            });
+        </script>
+</body>
+
+</html>
